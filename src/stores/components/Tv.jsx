@@ -1,0 +1,30 @@
+import React from 'react'
+import {tvData} from '../data/tv'
+
+const Tv = () => {
+ const firstFiveimg =  tvData.slice(0,5);
+
+ 
+  return (
+    <>
+
+    <h2 className='text-2xl '>TV's</h2>
+
+     <div className='flex '>
+      {
+        firstFiveimg.map((item) => {
+           return(
+            <div className='w-[80%] ml-4'>
+                <img src={item.image} alt="" className='w-[80%]' />
+            </div>
+           
+           )
+           
+        })
+      }
+    </div>
+    </>
+  )
+}
+
+export default Tv
