@@ -7,10 +7,10 @@ const Computers = () => {
 
   return (
     <>
-
+    <div className='bg-cyan-200'>
     <h2 className='text-2xl'>Laptops</h2>
 
-     <div className='flex '>
+     <div className='flex bg-white'>
       {
         firstFiveimg.map((item) => {
            return(
@@ -22,6 +22,7 @@ const Computers = () => {
            
         })
       }
+    </div>
     </div>
     </>
   )

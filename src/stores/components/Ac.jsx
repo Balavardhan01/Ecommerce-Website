@@ -6,10 +6,10 @@ const Ac = () => {
    
     return (
       <>
-  
+       <div className='bg-cyan-200'>
       <h2 className='text-2xl '>AC</h2>
   
-       <div className='flex '>
+       <div className='flex bg-white '>
         {
           firstFiveimg.map((item) => {
              return(
@@ -21,6 +21,7 @@ const Ac = () => {
              
           })
         }
+      </div>
       </div>
       </>
     )

@@ -7,10 +7,10 @@ const Watch = () => {
   
    return (
      <>
- 
+     <div className='bg-cyan-200'>
      <h2 className='text-2xl '>Watches</h2>
  
-      <div className='flex '>
+      <div className='flex bg-white'>
        {
          firstFiveimg.map((item) => {
             return(
@@ -22,6 +22,7 @@ const Watch = () => {
             
          })
        }
+     </div>
      </div>
      </>
    )

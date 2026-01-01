@@ -8,14 +8,14 @@ const Mobiles = () => {
  
   return (
     <>
-
+    <div className='bg-cyan-200 '>
     <h2 className='text-2xl '>Mobiles</h2>
 
-     <div className='flex '>
+     <div className='flex bg-white '>
       {
         firstFiveimg.map((item) => {
            return(
-            <div className='w-[80%] ml-4'>
+            <div className='w-[80%] ml-4 '>
                 <img src={item.image} alt="" className='w-[80%]' />
             </div>
            
@@ -23,6 +23,7 @@ const Mobiles = () => {
            
         })
       }
+    </div>
     </div>
     </>
   )
