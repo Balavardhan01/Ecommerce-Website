@@ -1,15 +1,15 @@
 import React from 'react'
-import {mobileData} from '../data/mobiles'
+import {acData} from '../data/ac'
 import Navbar from '../components/Navbar'
 
-const MobilePage = () => {
+const AcPage = () => {
   return (
-   <>
+       <>
 
       <Navbar/>
 
       <div className=' grid grid-cols-4 gap-10 p-5'>
-         {mobileData.map((item) => {
+         {acData.map((item) => {
         return(
             <div className=''>
                 <div><img src={item.image} alt="" className='w-300 h-70'/></div>
@@ -22,4 +22,5 @@ const MobilePage = () => {
   )
 }
 
-export default MobilePage
+
+export default AcPage

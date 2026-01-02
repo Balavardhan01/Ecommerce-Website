@@ -1,15 +1,15 @@
 import React from 'react'
-import {mobileData} from '../data/mobiles'
 import Navbar from '../components/Navbar'
+import {computerData} from '../data/computers'
 
-const MobilePage = () => {
+const LaptopPage = () => {
   return (
    <>
 
       <Navbar/>
 
       <div className=' grid grid-cols-4 gap-10 p-5'>
-         {mobileData.map((item) => {
+         {computerData.map((item) => {
         return(
             <div className=''>
                 <div><img src={item.image} alt="" className='w-300 h-70'/></div>
@@ -21,5 +21,4 @@ const MobilePage = () => {
    </>
   )
 }
-
-export default MobilePage
+export default LaptopPage
