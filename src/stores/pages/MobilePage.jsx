@@ -1,6 +1,7 @@
 import React from 'react'
 import {mobileData} from '../data/mobiles'
 import Navbar from '../components/Navbar'
+import { Link } from 'react-router-dom'
 
 const MobilePage = () => {
   return (
@@ -12,7 +13,10 @@ const MobilePage = () => {
          {mobileData.map((item) => {
         return(
             <div className=''>
-                <div><img src={item.image} alt="" className='w-300 h-70'/></div>
+               
+                   <Link to={`/mobiles/${item.id}`}> <div><img src={item.image} alt="" className='w-300 h-70'/></div>
+                   </Link>
+
                 <div className='flex items-center ml-23'>{item.company},{item.model}</div>
             </div>
         )

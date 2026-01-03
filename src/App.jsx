@@ -13,6 +13,19 @@ import AcPage from "./stores/pages/AcPage";
 import BooksPage from "./stores/pages/BooksPage";
 import FurniturePage from "./stores/pages/FurniturePage";
 
+import MobileSingle from "./SinglePages/MobileSingle";
+import LaptopSingle from "./SinglePages/LaptopSingle";
+import AcSingle from "./SinglePages/AcSingle"
+import BookSingle from "./SinglePages/BookSingle"
+import FurnitureSingle from "./SinglePages/FurnitureSingle"
+import KitchenSingle from "./SinglePages/KitchenSingle"
+import MenSingle from "./SinglePages/MenSingle"
+import RefrigeratorSingle from "./SinglePages/RefrigeratorSingle"
+import TvSingle from "./SinglePages/TvSingle"
+import WatchSingle from "./SinglePages/WatchSingle"
+import WomenSingle from "./SinglePages/WomenSingle"
+
+
 const App = () => {
   return (
     <>
@@ -29,6 +42,19 @@ const App = () => {
         <Route path="/Ac" element={<AcPage />} />
         <Route path="/Books" element={<BooksPage />} />
         <Route path="/Furniture" element={<FurniturePage />} />
+      
+        <Route path='/mobiles/:id' element={<MobileSingle/>}/>
+        <Route path='/laptops/:id' element={<LaptopSingle/>}/>
+        <Route path='/ac/:id' element={<AcSingle/>}/>
+        <Route path='/books/:id' element={<BookSingle/>}/>
+        <Route path='/furniture/:id' element={<FurnitureSingle/>}/>
+        <Route path='/kitchen/:id' element={<KitchenSingle/>}/>
+        <Route path='/mensfashion/:id' element={<MenSingle/>}/>
+        <Route path='/refrigerator/:id' element={<RefrigeratorSingle/>}/>
+        <Route path='/tv/:id' element={<TvSingle/>}/>
+        <Route path='/watch/:id' element={<WatchSingle/>}/>
+        <Route path='/womenfashion/:id' element={<WomenSingle/>}/>
+         
       </Routes>
     </>
   );
