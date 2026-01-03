@@ -16,12 +16,12 @@ const KitchenPage = () => {
        }
      }
    
-     const companies = [...new Set(mobileData.map(item => item.company))]
+     const companies = [...new Set(kitchenData.map(item => item.company))]
    
-     const filteredMobiles =
+     const filteredKitchen =
        selectedProduct.length === 0
-         ? mobileData
-         : mobileData.filter(item =>
+         ? kitchenData
+         : kitchenData.filter(item =>
              selectedProduct.includes(item.company)
            )
   return (
@@ -42,19 +42,18 @@ const KitchenPage = () => {
         ))}
       </div>
 
-      <div className=' grid grid-cols-4 gap-10 p-5'>
-         {kitchenData.map((item) => {
-        return(
-           <div className=''>
-               
-                   <Link to={`/kitchen/${item.id}`}> <div><img src={item.image} alt="" className='w-300 h-70'/></div>
-                   </Link>
-
-                <div className='flex items-center ml-23'>{item.brand},{item.model}</div>
-            </div>
-        )
-        }) }
-       </div>
+      <div className="grid grid-cols-4 gap-10 p-5">
+             {filteredKitchen.map(item => (
+               <div key={item.id}>
+                 <Link to={`/kitchen/${item.id}`}>
+                   <img src={item.image} alt="" className="w-72 h-40 object-contain" />
+                 </Link>
+                 <div className="mt-2 text-center">
+                   {item.brand}, {item.model}
+                 </div>
+               </div>
+             ))}
+           </div>
    </>
   )
 }

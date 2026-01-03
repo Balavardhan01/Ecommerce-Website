@@ -16,12 +16,12 @@ const BooksPage = () => {
       }
     }
   
-    const companies = [...new Set(mobileData.map(item => item.company))]
+    const companies = [...new Set(booksData.map(item => item.company))]
   
-    const filteredMobiles =
+    const filteredBooks =
       selectedProduct.length === 0
-        ? mobileData
-        : mobileData.filter(item =>
+        ? booksData
+        : booksData.filter(item =>
             selectedProduct.includes(item.company)
           )
   return (
@@ -43,19 +43,18 @@ const BooksPage = () => {
         ))}
       </div>
 
-      <div className=' grid grid-cols-4 gap-10 p-5'>
-         {booksData.map((item) => {
-        return(
-            <div className=''>
-               
-                   <Link to={`/books/${item.id}`}> <div><img src={item.image} alt="" className='w-300 h-70'/></div>
-                   </Link>
-
-                <div className='flex items-center ml-23'>{item.title},{item.author}</div>
+       <div className="grid grid-cols-4 gap-10 p-5">
+              {filteredBooks.map(item => (
+                <div key={item.id}>
+                  <Link to={`/books/${item.id}`}>
+                    <img src={item.image} alt="" className="w-72 h-40 object-contain" />
+                  </Link>
+                  <div className="mt-2 text-center">
+                    {item.title}, {item.author}
+                  </div>
+                </div>
+              ))}
             </div>
-        )
-        }) }
-       </div>
    </>
   )
 }

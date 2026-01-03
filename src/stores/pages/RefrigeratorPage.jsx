@@ -16,12 +16,12 @@ const RefrigeratorPage = () => {
       }
     }
   
-    const companies = [...new Set(mobileData.map(item => item.company))]
+    const companies = [...new Set(fridgeData.map(item => item.company))]
   
-    const filteredMobiles =
+    const filteredFridge =
       selectedProduct.length === 0
-        ? mobileData
-        : mobileData.filter(item =>
+        ? fridgeData
+        : fridgeData.filter(item =>
             selectedProduct.includes(item.company)
           )
   return (
@@ -42,19 +42,18 @@ const RefrigeratorPage = () => {
         ))}
       </div>
 
-      <div className=' grid grid-cols-4 gap-10 p-5'>
-         {fridgeData.map((item) => {
-        return(
-             <div className=''>
-               
-                   <Link to={`/refrigerator/${item.id}`}> <div><img src={item.image} alt="" className='w-300 h-70'/></div>
-                   </Link>
-
-                <div className='flex items-center ml-23'>{item.brand},{item.model}</div>
-            </div>
-        )
-        }) }
-       </div>
+    <div className="grid grid-cols-4 gap-10 p-5">
+           {filteredFridge.map(item => (
+             <div key={item.id}>
+               <Link to={`/refrigerator/${item.id}`}>
+                 <img src={item.image} alt="" className="w-72 h-40 object-contain" />
+               </Link>
+               <div className="mt-2 text-center">
+                 {item.brand}, {item.model}
+               </div>
+             </div>
+           ))}
+         </div>
    </>
   )
 }

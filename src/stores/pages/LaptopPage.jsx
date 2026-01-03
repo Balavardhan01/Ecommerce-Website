@@ -16,12 +16,12 @@ const LaptopPage = () => {
       }
     }
   
-    const companies = [...new Set(mobileData.map(item => item.company))]
+    const companies = [...new Set(computerData.map(item => item.company))]
   
-    const filteredMobiles =
+    const filteredLaptops =
       selectedProduct.length === 0
-        ? mobileData
-        : mobileData.filter(item =>
+        ? computerData
+        : computerData.filter(item =>
             selectedProduct.includes(item.company)
           )
   return (
@@ -42,19 +42,18 @@ const LaptopPage = () => {
         ))}
       </div>
 
-      <div className=' grid grid-cols-4 gap-10 p-5'>
-         {computerData.map((item) => {
-        return(
-            <div className=''>
-               
-                   <Link to={`/laptops/${item.id}`}> <div><img src={item.image} alt="" className='w-300 h-70'/></div>
-                   </Link>
-
-                <div className='flex items-center ml-23'>{item.company},{item.model}</div>
-            </div>
-        )
-        }) }
-       </div>
+      <div className="grid grid-cols-4 gap-10 p-5">
+             {filteredLaptops.map(item => (
+               <div key={item.id}>
+                 <Link to={`/laptops/${item.id}`}>
+                   <img src={item.image} alt="" className="w-72 h-40 object-contain" />
+                 </Link>
+                 <div className="mt-2 text-center">
+                   {item.company}, {item.model}
+                 </div>
+               </div>
+             ))}
+           </div>
    </>
   )
 }

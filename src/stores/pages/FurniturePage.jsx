@@ -16,12 +16,12 @@ const FurniturePage = () => {
       }
     }
   
-    const companies = [...new Set(mobileData.map(item => item.company))]
+    const companies = [...new Set(furnitureData.map(item => item.company))]
   
-    const filteredMobiles =
+    const filteredFurniture =
       selectedProduct.length === 0
-        ? mobileData
-        : mobileData.filter(item =>
+        ? furnitureData
+        : furnitureData.filter(item =>
             selectedProduct.includes(item.company)
           )
   return (
@@ -42,20 +42,19 @@ const FurniturePage = () => {
         ))}
       </div>
 
-      <div className=' grid grid-cols-4 gap-10 p-5'>
-         {furnitureData.map((item) => {
-        return(
-            <div className=''>
-               
-                   <Link to={`/furniture/${item.id}`}> <div><img src={item.image} alt="" className='w-300 h-70'/></div>
-                   </Link>
-
-                <div className='flex items-center ml-23'>{item.brand},{item.model}</div>
-            </div>
-        )
-        }) }
-       </div>
-   </>
+      <div className="grid grid-cols-4 gap-10 p-5">
+             {filteredFurniture.map(item => (
+               <div key={item.id}>
+                 <Link to={`/furniture/${item.id}`}>
+                   <img src={item.image} alt="" className="w-72 h-40 object-contain" />
+                 </Link>
+                 <div className="mt-2 text-center">
+                   {item.brand}, {item.model}
+                 </div>
+               </div>
+             ))}
+           </div>
+           </>
   )
 }
 
